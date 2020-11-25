@@ -6,12 +6,14 @@ import {App} from './App';
 import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
-  uri:'https://petgram-server.midudev.now.sh/graphql'
+  uri:'https://petgram-server-23xyhmeq5.vercel.app/graphql'
 })
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
