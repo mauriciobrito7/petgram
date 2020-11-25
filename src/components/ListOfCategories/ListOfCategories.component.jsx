@@ -9,12 +9,13 @@ export function useCategoriesData() {
 
     useEffect(()=>{
         setLoading(true)
-        window.fetch('https://raw.githubusercontent.com/mauriciobrito7/petgram/master/src/db.json')
+        window.fetch('https://petgram-server-23xyhmeq5.vercel.app/categories')
         .then(res => res.json())
         .then(response => {
-            setCategories(response.categories)
+            setCategories(response)
             setLoading(false)
         })
+        .catch(e => console.log(e))
         
     },[])
 
