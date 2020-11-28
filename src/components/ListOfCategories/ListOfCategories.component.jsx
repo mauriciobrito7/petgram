@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import {Category} from '../Category/category.component'
+import {Category} from '../Category/Category.component'
 import {List, Item} from './ListOfCategories.styles'
 // import {categories} from '../../db.json'
 
@@ -45,7 +45,7 @@ export const ListOfCategories = () => {
                 loading ? <Item key='loading'/> :
                 categories.map(category => (
                     <Item key={category.id}>
-                        <Category {...category}/>
+                        <Category {...category} path={`/pet/${category.id}`}/>
                     </Item>
                 ))
             }
