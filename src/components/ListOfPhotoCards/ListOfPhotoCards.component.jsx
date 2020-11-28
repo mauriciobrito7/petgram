@@ -18,13 +18,16 @@ const withPhotos = graphql(gql`
 `)
 
 const ListOfPhotoCardComponent = ({data: { photos = []}} = {}) => {
-    console.log(photos)
+
     return (
-        <ul>
-            { [photos].map(photo => (
-                <PhotoCard key={photo.id} {...photo}/>
-            ))}
-        </ul>
+        <div>
+            <ul>
+                { 
+                photos.map(photo => (
+                    <PhotoCard key={photo.id} {...photo}/>
+                ))}
+            </ul>
+        </div>
     )
 }
 
