@@ -20,7 +20,7 @@ export const List = styled.ul`
         top:-20px;
         transform: scale(.7);
         z-index:1000;
-        ${fadeIn()}
+        ${fadeIn({time:'0.3s'})}
     }`}
 `
 
