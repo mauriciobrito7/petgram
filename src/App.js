@@ -5,9 +5,16 @@ import { Router } from '@reach/router'
 
 import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
+import { Favs } from './pages/Favs'
+import { User } from './pages/User'
+import { NotRegisteredUser } from './pages/NotRegisteredUser'
 
 import { Logo } from './components/Logo/Logo.component'
 import { NavBar } from './components/NavBar/NavBar.component'
+
+const UserLogged = ({ children }) => {
+  return children({ isAuth: false })
+}
 
 export const App = () => {
 
@@ -17,8 +24,25 @@ export const App = () => {
     <Router>
       <Home path='/'/>
       <Home path='/pet/:id'/>
-      <Detail path='/detail/:detailId'/>
+      <Detail path='/detail/:detailId'/>    
     </Router>
-    <NavBar/>
+
+    <UserLogged>
+      {
+        ({ isAuth }) => 
+          isAuth ? 
+          <Router>
+            <Favs path='/favs'/>
+            <User path='/user'/> 
+          </Router>
+          :
+          <Router>
+            <NotRegisteredUser path='/favs' />
+            <NotRegisteredUser path='/user' />
+          </Router>
+      }
+    </UserLogged>
+      
+    <NavBar/> 
   </div>)
 }
