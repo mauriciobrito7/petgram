@@ -4,17 +4,19 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import {App} from './App';
 import reportWebVitals from './reportWebVitals';
+import Context from './Context'
+
 
 const client = new ApolloClient({
   uri:'https://petgram-server-23xyhmeq5.vercel.app/graphql'
 })
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </React.StrictMode>,
+    <Context.Provider>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </Context.Provider>,
   document.getElementById('root')
 );
 

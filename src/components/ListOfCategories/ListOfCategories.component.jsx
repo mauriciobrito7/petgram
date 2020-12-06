@@ -37,7 +37,7 @@ export const ListOfCategories = () => {
         return () => {
             document.removeEventListener('scroll',eventId)
         }
-    },)
+    },[showFixed])
 
     const renderList = (fixed) => (
         <List fixed={fixed}>
