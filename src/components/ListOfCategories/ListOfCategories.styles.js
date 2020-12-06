@@ -5,7 +5,7 @@ export const List = styled.ul`
     display: flex;
     overflow: scroll;
     width: 100%;
-    overflow-y:hidden;
+    padding:1em;
     //when fixed = true
     ${props => props.fixed && css`{
         background: #fff;
