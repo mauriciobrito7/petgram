@@ -2,7 +2,7 @@ import React from 'react'
 import { GlobalStyles } from './styles/GlobalStyles'
 
 import { Router } from '@reach/router'
-import Context from './Context'
+import {Consumer} from './Context'
 
 import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
@@ -24,7 +24,7 @@ export const App = () => {
       <Detail path='/detail/:detailId'/>    
     </Router>
 
-    <Context.Consumer>
+    <Consumer>
       {
         ({ isAuth }) => 
           isAuth ? 
@@ -38,7 +38,7 @@ export const App = () => {
             <NotRegisteredUser path='/user' />
           </Router>
       }
-    </Context.Consumer>
+    </Consumer>
       
     <NavBar/> 
   </div>)

@@ -4,7 +4,7 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import {App} from './App';
 import reportWebVitals from './reportWebVitals';
-import Context from './Context'
+import {Provider} from './Context'
 
 
 const client = new ApolloClient({
@@ -12,11 +12,11 @@ const client = new ApolloClient({
 })
 
 ReactDOM.render(
-    <Context.Provider>
+    <Provider>
       <ApolloProvider client={client}>
         <App />
       </ApolloProvider>
-    </Context.Provider>,
+    </Provider>,
   document.getElementById('root')
 );
 
