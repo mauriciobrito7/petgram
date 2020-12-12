@@ -14,6 +14,7 @@ export const Nav = styled.nav`
   max-width: 500px;
   position: fixed;
   right:0;
+  left: 0;
   width: 100%;
   z-index:1000;
 `

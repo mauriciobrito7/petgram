@@ -9,7 +9,7 @@ export const UserForm = ({ onSubmit, title }) => {
   const password = useInputValue('')
 
   const handleSubmit = (event) => {
-    event.prevemtDefault()
+    event.preventDefault()
     onSubmit({ 
       email: email.value, 
       password: password.value

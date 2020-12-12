@@ -6,7 +6,7 @@ import { RegisterMutation } from '../container/RegisterMutation'
 export const NotRegisteredUser = () => (
   <Consumer>
     {
-      ({ isAuth, activateAuth}) => {
+      ({ activateAuth}) => {
         return (
           <>
             <RegisterMutation>
