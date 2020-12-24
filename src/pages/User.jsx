@@ -7,6 +7,6 @@ export const User = () => {
   
   return <>
     <h1>User</h1>
-    <SubmitButton onClick={ removeAuth } >Sign out</SubmitButton>
+    <SubmitButton onClick={removeAuth} >Sign out</SubmitButton>
   </>
 }
