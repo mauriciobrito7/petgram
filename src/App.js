@@ -22,13 +22,14 @@ export const App = () => {
     <GlobalStyles/>
     <Logo/>
     <Router>
-      <NotFound default/>
+      <NotFound default />
       <Home path='/'/>
       <Home path='/pet/:id'/>
       <Detail path='/detail/:detailId'/>
       {!isAuth && <NotRegisteredUser path='/login'/>} 
       {!isAuth && <Redirect from='/favs' to='/login'/>}
       {!isAuth && <Redirect from='/user' to='/login'/>}
+      {isAuth && <Redirect from='/login' to='/'/>}
 
       <Favs path='/favs'/>
       <User path='/user'/>
