@@ -1,34 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import {Category} from '../Category/Category.component'
 import {List, Item} from './ListOfCategories.styles'
+import { useCategoriesData } from '../../hooks/useCategoriesData.hook'
 // import {categories} from '../../db.json'
-
-export function useCategoriesData() {
-    const [categories, setCategories] = useState([])
-    const [loading, setLoading] = useState(false)
-    const url = 'https://petgram-server-23xyhmeq5.vercel.app/categories'
-
-    useEffect(()=>{
-        setLoading(true)
-        const ac = new AbortController()
-        window.fetch(url)
-        .then(res => res.json())
-        .then(response => {
-            setCategories(response)
-            setLoading(false)
-        })
-        .catch(e => console.log(e))
-
-        return ac.abort()
-        
-    },[])
-
-    return {categories, loading}
-}
 
 const ListOfCategoriesComponent = () => {
 
-    const {categories ,loading} = useCategoriesData()
+    const [categories ,loading] = useCategoriesData()
     const [showFixed, setShowFixed] = useState(false)
 
     useEffect(() => {
