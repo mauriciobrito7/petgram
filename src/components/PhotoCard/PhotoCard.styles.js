@@ -8,11 +8,27 @@ export const Article = styled.article`
 export const ImgWrapper = styled.div`
     border-radius: 10px;
     display: block; 
-    height: 0;
+    height: 100px;
     overflow: hidden;
     padding: 56.25% 0 0 0;
     position: relative;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
+    @media (min-width: 720px) {
+        width:80%;
+    }
+`
+export const Info = styled.div`
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content:left;
+    margin-bottom:1em;
+    @media (min-width: 720px) {
+        width:80%;
+    }
+    
 `
 
 export const Img = styled.img`

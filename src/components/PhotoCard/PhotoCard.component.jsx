@@ -1,6 +1,6 @@
 import React from 'react'
 import { FavButton } from '../FavButton/FavButton.component'
-import { ImgWrapper, Img, Article } from './PhotoCard.styles'
+import { ImgWrapper, Img, Article, Info } from './PhotoCard.styles'
 import { useNearScreen } from '../../hooks/useNearScreen.hook'
 import { ToggleLikeMutation } from '../../container/ToggleLikeMutation'
 import { Link } from '@reach/router'
@@ -22,19 +22,22 @@ export const PhotoCard = ({id, liked, likes = 0, src = DEFAULT_IMAGE}) => {
                         <Img src={src} />
                     </ImgWrapper>
                     </Link>
-                    <ToggleLikeMutation>
-                        {
-                            (toggleLike) => {
-                                const handleFavClick = () => {
-                                    toggleLike({ variables : { 
-                                        input: { id }
-                                    } })
-                                    
+                    <Info>
+
+                        <ToggleLikeMutation>
+                            {
+                                (toggleLike) => {
+                                    const handleFavClick = () => {
+                                        toggleLike({ variables : { 
+                                            input: { id }
+                                        } })
+                                        
+                                    }
+                                    return <FavButton liked={liked} likes={likes} onClick={handleFavClick}/>
                                 }
-                                return <FavButton liked={liked} likes={likes} onClick={handleFavClick}/>
                             }
-                        }
-                    </ToggleLikeMutation>
+                        </ToggleLikeMutation>
+                    </Info>
                 </>
             )}
         </Article>

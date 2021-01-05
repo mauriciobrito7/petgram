@@ -30,9 +30,9 @@ export const App = () => {
         <Home path='/pet/:id'/>
         <Detail path='/detail/:detailId'/>
         {!isAuth && <NotRegisteredUser path='/login'/>} 
-        {!isAuth && <Redirect from='/favs' to='/login'/>}
-        {!isAuth && <Redirect from='/user' to='/login'/>}
-        {isAuth && <Redirect from='/login' to='/'/>}
+        {!isAuth && <Redirect from='/favs' noThrow to='/login'/>}
+        {!isAuth && <Redirect from='/user' noThrow to='/login'/>}
+        {isAuth && <Redirect from='/login' noThrow to='/'/>}
 
         <Favs path='/favs'/>
         <User path='/user'/>
