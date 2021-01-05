@@ -6,6 +6,8 @@ export const List = styled.ul`
     overflow: scroll;
     width: 100%;
     padding:1em;
+    -ms-overflow-style: none;
+    scrollbar-width:none;
     //when fixed = true
     ${props => props.fixed && css`{
         background: #fff;
