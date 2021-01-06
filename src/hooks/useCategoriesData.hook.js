@@ -16,7 +16,7 @@ export function useCategoriesData() {
         })
         .catch(e => console.log(e))
 
-        return ac.abort()
+        return () => ac.abort()
         
     },[])
 

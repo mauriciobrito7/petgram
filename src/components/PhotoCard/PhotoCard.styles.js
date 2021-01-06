@@ -24,7 +24,7 @@ export const Info = styled.div`
     margin-right: auto;
     display: flex;
     justify-content:left;
-    margin-bottom:1em;
+    margin-bottom:1.5em;
     @media (min-width: 720px) {
         width:80%;
     }

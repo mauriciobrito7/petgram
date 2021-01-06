@@ -3,7 +3,7 @@ import { ListOfCategories } from '../components/ListOfCategories/ListOfCategorie
 import { ListOfPhotoCards } from '../components/ListOfPhotoCards/ListOfPhotoCards.component'
 import { Layout } from '../components/Layout/Layout.component'
 const HomePage = ({ id }) => {
-  return <Layout>
+  return <Layout title={'Categories'}>
         <ListOfCategories/>
         <ListOfPhotoCards categoryId={id}/>
   </Layout>

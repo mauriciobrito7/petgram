@@ -13,7 +13,6 @@ import { NotFound } from './pages/NotFound'
 import { Logo } from './components/Logo/Logo.component'
 import { NavBar } from './components/NavBar/NavBar.component'
 import { Spinner } from './components/Spinner/Spinner.component'
-import { Layout } from './components/Layout/Layout.component'
 
 // lazy loading
 const Favs = React.lazy(() => import('./pages/Favs'))

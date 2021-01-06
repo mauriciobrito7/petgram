@@ -3,6 +3,7 @@ import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
 //components
 import { ListOfFavs } from '../components/ListOfFavs/ListOfFavs.component'
+import { Spinner } from '../components/Spinner/Spinner.component'
 
 const GETS_FAVS = gql`
   query getFavs { 
@@ -17,7 +18,7 @@ const GETS_FAVS = gql`
 `
 
 const renderProp = ({ loading, error, data }) => {
-  if(loading) return <p>Loading...</p>
+  if(loading) return <Spinner>Loading...</Spinner>
   if(error) return <p>Error!!</p>
 
   const { favs } = data

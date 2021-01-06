@@ -19,7 +19,7 @@ const GET_SINGLE_PHOTO = gql`
 `
 
 const renderProp = ({ loading, error, data }) => {
-  if (loading) return <Spinner style={{margin:'0 auto'}}/>
+  if (loading) return <Spinner/>
   if (error) return <p>Error!</p>
 
     const { photo = {} } = data

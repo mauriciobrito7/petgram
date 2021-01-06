@@ -11,20 +11,20 @@ const ListOfCategoriesComponent = () => {
     const [showFixed, setShowFixed] = useState(false)
 
     useEffect(() => {
-        const onScroll = e => {
+        const onScroll = () => {
             const newShowFixed = window.scrollY > 200 
             showFixed !== newShowFixed && setShowFixed(newShowFixed)
         }
-        const eventId = document.addEventListener('scroll', onScroll)
+        const eventScrollId = document.addEventListener('scroll', onScroll)
 
         return () => {
-            document.removeEventListener('scroll',eventId)
+            document.removeEventListener('scroll',eventScrollId)
+
         }
     },[showFixed])
 
     const renderList = (fixed) => (
         <Nav>
-            <h2>Categories</h2>
             <List fixed={fixed}>
                 {   
                     loading ? <Spinner/> :

@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        box-sizing: border-box;
     }
     body {
         background: #fefefe;
@@ -16,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         max-width: 500px;
         overscroll-behavior: none; 
+        
     }
 
     #root {
@@ -25,7 +27,7 @@ export const GlobalStyles = createGlobalStyle`
         padding-bottom: 10px;
     }
 
-    ul, li, h1, h2, h3, p, button {
+    ul, li, h1, h2, h3, p, button, a {
         margin:0;
         padding: 0;
     } 
@@ -34,5 +36,8 @@ export const GlobalStyles = createGlobalStyle`
         background: transparent;
         border:0;
         outline: 0;
+    }
+    input {
+        box-sizing: border-box
     }
 `
