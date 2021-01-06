@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import {Category} from '../Category/Category.component'
-import {List, Item, Nav} from './ListOfCategories.styles'
+import { Category } from '../Category/Category.component'
+import { Spinner } from '../Spinner/Spinner.component'
+import { List, Item, Nav } from './ListOfCategories.styles'
 import { useCategoriesData } from '../../hooks/useCategoriesData.hook'
 // import {categories} from '../../db.json'
 
@@ -26,7 +27,7 @@ const ListOfCategoriesComponent = () => {
             <h2>Categories</h2>
             <List fixed={fixed}>
                 {   
-                    loading ? <Item key='loading'/> :
+                    loading ? <Spinner/> :
                     categories.map(category => (
                         <Item key={category.id}>
                             <Category {...category} path={`/pet/${category.id}`}/>

@@ -11,6 +11,7 @@ export const Nav = styled.nav`
         padding-left:1em;
         font-size:16px;
         font-weight: 500;
+        color:#212121;
     }
 `
 

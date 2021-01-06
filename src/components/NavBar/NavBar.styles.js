@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   border-top: 1px solid #e0e0e0;
   bottom: 0;
   height: 50px;
-  margin: 0 auto !important;
+  margin: 0 auto;
   max-width: 500px;
   position: fixed;
   right:0;

@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
+export const Fragment = styled.div`
+  margin-bottom: 2em;
+`
 export const Div = styled.div`
   padding:16px;
 `
-
 export const Title = styled.h1`
   font-size: 24px;
   font-weight: 600;
