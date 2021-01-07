@@ -26,7 +26,7 @@ const ListOfCategoriesComponent = () => {
         <Nav>
             <List fixed={fixed}>
                 {   
-                    loading ? <ShadowSpinner shape={'circle'}/> :
+                    loading ? <ShadowSpinner shape={'circle'} width='75px' height='75px' orientation='row'/> :
                     categories.map(category => (
                         <Item key={category.id}>
                             <Category {...category} path={`/pet/${category.id}`}/>

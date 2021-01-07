@@ -1,17 +1,32 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+    width:100%;
     display:inline-flex;
-    justify-content: space-between;
-    padding:1em;
-    
-    div.shape{
-        display:flex;
-        margin-right: 1em;
-        height:75px;
-        width:75px;
+    &.column {
+        flex-wrap:wrap;
+        justify-content:center;
+        div {
+            margin-bottom: 1em;
+        }
+    }
+    &.row {
+        display: -webkit-inline-box; 
+        overflow:scroll;
+        div {
+            margin-right: 1em;
+            width:100%;
+
+        }
+    }
+    div.circle {
         border-radius: 50%;
-    
+    }
+    div.square{
+        border-radius: 10px;
+    }
+    div{
+        display:flex;
         animation: pulse 1s infinite ease-in-out;
         @keyframes pulse {
             0% {
