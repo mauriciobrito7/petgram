@@ -4,7 +4,7 @@ import { Layout } from '../components/Layout/Layout.component'
 
 export const Detail = ({ detailId }) => 
 (
-<Layout title='Detail' style={{diplay:'flex'}}>
+<Layout title='Detail'>
   <PhotoCardWithQuery id={detailId} />
 </Layout>
 )

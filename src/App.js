@@ -4,7 +4,7 @@ import { GlobalStyles } from './styles/GlobalStyles'
 import { Router, Redirect } from '@reach/router'
 import { Context } from './Context'
 //Pages
-import { Home } from './pages/Home'
+// import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
 import { User } from './pages/User'
 import { NotRegisteredUser } from './pages/NotRegisteredUser'
@@ -16,13 +16,14 @@ import { Spinner } from './components/Spinner/Spinner.component'
 
 // lazy loading
 const Favs = React.lazy(() => import('./pages/Favs'))
+const Home = React.lazy(() => import('./pages/Home'))
 
 export const App = () => {
 
   const { isAuth } = useContext(Context)
 
   return (
-    <Suspense fallback={Spinner}>
+    <Suspense fallback={<Spinner style={{marginTop:'45%'}}/>} >
       <GlobalStyles/>
       <Logo/>
         <Router>
