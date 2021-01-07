@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import { fadeIn } from '../../styles/animation'
+import { Link } from 'react-router-dom'
 
 export const Article = styled.article`
     min-height:200px;
 `
 
-export const ImgWrapper = styled.div`
+export const ImgWrapper = styled(Link)`
     border-radius: 10px;
     display: block; 
     height: 100px;

@@ -5,6 +5,7 @@ import { ApolloProvider } from 'react-apollo'
 import {App} from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from './Context'
+import { BrowserRouter } from 'react-router-dom'
 
 
 const client = new ApolloClient({
@@ -29,9 +30,11 @@ const client = new ApolloClient({
 
 ReactDOM.render(
     <Provider>
-      <ApolloProvider client={client}>
-        <App />
-      </ApolloProvider>
+      <BrowserRouter>
+        <ApolloProvider client={client}>
+          <App />
+        </ApolloProvider>
+      </BrowserRouter>
     </Provider>,
   document.getElementById('root')
 );

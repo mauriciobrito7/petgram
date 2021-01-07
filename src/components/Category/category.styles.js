@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Link as LinkRouter } from '@reach/router'
+import { Link } from 'react-router-dom'
 
-export const Link = styled(LinkRouter)`
+export const CategoryOption = styled(Link)`
     display: flex;
     flex-direction: column;
     text-align: center;

@@ -1,14 +1,14 @@
 import React from 'react'
-import { Grid, Image, Link } from './ListOfFavs.styles'
+import { Grid, Image, Fav } from './ListOfFavs.styles'
 import PropTypes from 'prop-types'
 
 export const ListOfFavs = ({ favs = [] }) => {
   return <Grid>
     { 
       favs.map(fav => {
-        return <Link key={fav.id} to={`/detail/${fav.id}` }>
-          <Image src={fav.src} alt='Fav'  />
-        </Link>  
+        return <Fav to={`/detail/${fav.id}`} key={fav.id} >
+            <Image src={fav.src} alt='Fav'  />
+        </Fav>  
      })
     }
   </Grid>

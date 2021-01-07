@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Link as LinkRouter } from '@reach/router'
+import { Link } from 'react-router-dom'
 
-export const Link = styled(LinkRouter)`
+export const Fav = styled(Link)`
   border-radius:8px;
   box-shadow: 0 0 8px rgba(0,0,0,.3);
   display:inline-block;

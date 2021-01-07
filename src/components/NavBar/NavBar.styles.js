@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link as LinkRouter } from '@reach/router'
+import { NavLink } from 'react-router-dom'
 import { fadeIn } from '../../styles/animation'
 
 export const Nav = styled.nav`
@@ -19,7 +19,7 @@ export const Nav = styled.nav`
   z-index:1000;
 `
 
-export const Link = styled(LinkRouter)`
+export const NavItem = styled(NavLink)`
   display: inline-flex;
   align-items: center;
   color: #888;
