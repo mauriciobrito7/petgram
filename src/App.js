@@ -4,8 +4,8 @@ import { GlobalStyles } from './styles/GlobalStyles'
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import { Context } from './Context'
+
 //Pages
-// import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
 import { User } from './pages/User'
 import { NotRegisteredUser } from './pages/NotRegisteredUser'
@@ -15,6 +15,7 @@ import { ScrollToTop } from './components/ScrollToTop/ScrollToTop.component'
 import { Logo } from './components/Logo/Logo.component'
 import { NavBar } from './components/NavBar/NavBar.component'
 import { Spinner } from './components/Spinner/Spinner.component'
+import { FloatMessage } from './components/FloatMessage/FloatMessage.component'
 
 // lazy loading
 const Favs = React.lazy(() => import('./pages/Favs'))

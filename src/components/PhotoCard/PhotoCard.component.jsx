@@ -1,17 +1,22 @@
-import React from 'react'
+import React, {useContext, useState} from 'react'
+import PropTypes from 'prop-types'
+import { Context } from '../../Context'
+
 import { FavButton } from '../FavButton/FavButton.component'
 import { ImgWrapper, Img, Article, Info } from './PhotoCard.styles'
 import { useNearScreen } from '../../hooks/useNearScreen.hook'
 import { ToggleLikeMutation } from '../../container/ToggleLikeMutation'
+import { FloatMessage } from '../FloatMessage/FloatMessage.component'
 
-import PropTypes from 'prop-types'
+
 
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 
 
 export const PhotoCard = ({id, liked, likes = 0, src = DEFAULT_IMAGE}) => {   
-    
+    const { isAuth } = useContext(Context)
     const [show, element] = useNearScreen()
+    const [showMessage, setShowMessage] = useState(false)
 
     return (
         <Article ref={element}>
@@ -26,6 +31,7 @@ export const PhotoCard = ({id, liked, likes = 0, src = DEFAULT_IMAGE}) => {
                             {
                                 (toggleLike) => {
                                     const handleFavClick = () => {
+                                        if(!isAuth) return setShowMessage(true)
                                         toggleLike({ variables : { 
                                             input: { id }
                                         } })
@@ -35,6 +41,8 @@ export const PhotoCard = ({id, liked, likes = 0, src = DEFAULT_IMAGE}) => {
                                 }
                             }
                         </ToggleLikeMutation>
+                        {showMessage && <FloatMessage time={2000} >You must be logged</FloatMessage>}
+                        
                     </Info>
                 </>
             )}
