@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaRegSadCry } from 'react-icons/fa'
+import { FaSadCry } from 'react-icons/fa'
 
 export const Fav = styled(Link)`
   border-radius:8px;
@@ -18,21 +18,28 @@ export const Fav = styled(Link)`
 `
 export const Empty = styled.div`
   width:100%;
-  margin-top:50%;
+  height:calc(100vh - 200px);
   display:flex;
+  flex-direction:column;
   flex-wrap:wrap;
   justify-content:center;
   align-items:center;
   color: #888;
 `
 
-export const Icon = styled(FaRegSadCry)`
-  font-size:256px;
-
+export const Icon = styled(FaSadCry)`
+  width:180px;
+  height:180px;
+  color: #212121;
 `
 
 export const Title = styled.h1`
-  font-size:32px;
+  font-size: 18px;
+  font-weight: normal;
+  text-align:center;
+  @media (min-width: 720px) {
+    font-size: 32px;
+  }
 `
 
 export const Grid = styled.div`

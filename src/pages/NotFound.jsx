@@ -15,27 +15,35 @@ const ContainerNotFound = styled.div`
 `
 const Title = styled.h1`
   width: 100%;
-  font-size: 32px;
+  font-size: 18px;
   font-weight: normal;
+  color: #888;
+  @media (min-width: 720px) {
+    font-size: 32px;
+  }
 `
 
 const LinkHome = styled(Link)`
   color:#212121;
   font-weight: bold;
-  text-decoration: none;
-  font-size: 32px;
+  font-size: 18px;
   width: 100%;
+  margin-top: 1em;
+  @media (min-width: 720px) {
+    font-size: 32px;
+  }
 `
 
 const NotFoundImg = styled.img`
   width:200px;
   height:200px;
+  
 `
 
 export const NotFound = () => (
   <ContainerNotFound>
     <NotFoundImg src={NoFoundLogo}/>
-    <Title>Error 404 - Page no found</Title>
+    <Title>Error 404 - Page not found</Title>
     <LinkHome to='/'>Go home</LinkHome>
   </ContainerNotFound>
 )
