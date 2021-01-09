@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaSadCry } from 'react-icons/fa'
+import { FaRegSadCry } from 'react-icons/fa'
 
 export const Fav = styled(Link)`
   border-radius:8px;
@@ -26,12 +26,12 @@ export const Empty = styled.div`
   color: #888;
 `
 
-export const Icon = styled(FaSadCry)`
+export const Icon = styled(FaRegSadCry)`
   font-size:256px;
 
 `
 
-export const Title = styled.span`
+export const Title = styled.h1`
   font-size:32px;
 `
 

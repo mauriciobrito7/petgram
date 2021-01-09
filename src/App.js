@@ -15,7 +15,6 @@ import { ScrollToTop } from './components/ScrollToTop/ScrollToTop.component'
 import { Logo } from './components/Logo/Logo.component'
 import { NavBar } from './components/NavBar/NavBar.component'
 import { Spinner } from './components/Spinner/Spinner.component'
-import { FloatMessage } from './components/FloatMessage/FloatMessage.component'
 
 // lazy loading
 const Favs = React.lazy(() => import('./pages/Favs'))
@@ -25,11 +24,20 @@ export const App = () => {
 
   const { isAuth } = useContext(Context)
 
+  const logoWrapper = {
+    width: "100%",
+    height: "50px",
+    display:"flex",
+    justifyContent:"left",
+    alignItems: "center"
+  }
 
   return (
-    <Suspense fallback={<Spinner style={{marginTop:'45%'}}/>} >
+    <Suspense fallback={<Spinner style={{marginTop:"45%"}}/>} >
       <GlobalStyles/>
-      <Logo/>
+      <div style={logoWrapper}>
+        <Logo/>
+      </div>
           <ScrollToTop/>
           <Switch>
             <Route  exact path="/" component={Home}/>

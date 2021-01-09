@@ -1,7 +1,6 @@
 import React from 'react'
 import { Grid, Image, Fav, Empty, Title, Icon } from './ListOfFavs.styles'
 import PropTypes from 'prop-types'
-import { FaSadCry } from 'react-icons/fa'
 
 
 export const ListOfFavs = ({ favs = [] }) => {
