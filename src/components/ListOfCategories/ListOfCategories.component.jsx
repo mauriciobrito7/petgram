@@ -15,9 +15,11 @@ const ListOfCategoriesComponent = () => {
             showFixed !== newShowFixed && setShowFixed(newShowFixed)
         }
         const eventScrollId = document.addEventListener('scroll', onScroll)
+        const ac = new AbortController()
 
         return () => {
             document.removeEventListener('scroll',eventScrollId)
+            return () => ac.abort()
 
         }
     },[showFixed])
