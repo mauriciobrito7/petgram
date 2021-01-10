@@ -5,16 +5,23 @@ import  styled  from 'styled-components'
 
 const BackIcon = styled(IoMdArrowBack)`
     font-size:'32px';
+    color:'#212121';
+`
+
+const LinkBack = styled(Link)`
+    display:flex;
+    width:40%;
+    padding:.5em;
+    align-items:center;
     margin-bottom:0.5em;
-    color:'#212121'
 `
 
 export const GoBack = () => {
     const history = useHistory()
     const SIZE = '32px'
     return (
-        <Link to='/' onClick={()=> {history.goBack()}}>
+        <LinkBack to='/' onClick={()=> {history.goBack()}}>
             <BackIcon size={SIZE} color={'#212121'}/>
-        </Link>
+        </LinkBack>
     )
 }
