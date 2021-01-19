@@ -1,9 +1,9 @@
-import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
-import { fadeIn } from '../../styles/animation'
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { fadeIn } from "../../styles/animation";
 
 export const Nav = styled.nav`
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-around;
   background: #fcfcfc;
@@ -13,11 +13,11 @@ export const Nav = styled.nav`
   margin: 0 auto;
   max-width: 500px;
   position: fixed;
-  right:0;
+  right: 0;
   left: 0;
   width: 100%;
-  z-index:1000;
-`
+  z-index: 1000;
+`;
 
 export const NavItem = styled(NavLink)`
   display: inline-flex;
@@ -31,12 +31,12 @@ export const NavItem = styled(NavLink)`
     color: #000;
 
     &:after {
-      ${fadeIn({ time: '0.5s' })}
+      ${fadeIn({ time: "0.5s" })}
       content: '-';
-      position:absolute;
+      position: absolute;
       bottom: 0;
       font-size: 34px;
       line-height: 20px;
     }
   }
-`
+`;

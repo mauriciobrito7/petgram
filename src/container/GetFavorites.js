@@ -23,6 +23,7 @@ const renderProp = ({ loading, error, data }) => {
 
   const { favs } = data
   return <ListOfFavs favs={favs}/>
+  
 }
 
 export const FavsWithQuery = () => (

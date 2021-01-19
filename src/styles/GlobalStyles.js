@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     html {
@@ -40,4 +40,4 @@ export const GlobalStyles = createGlobalStyle`
     input {
         box-sizing: border-box
     }
-`
+`;

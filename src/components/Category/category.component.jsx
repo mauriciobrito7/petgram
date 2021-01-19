@@ -1,11 +1,15 @@
-import React from 'react'
-import { CategoryOption, Image } from './category.styles'
+import React from "react";
+import { CategoryOption, Image } from "./category.styles";
 
-const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
+const DEFAULT_IMAGE = "https://i.imgur.com/dJa0Hpl.jpg";
 
-export const Category = ({cover = DEFAULT_IMAGE, path='#', emoji='?'}) => (
-    <CategoryOption to={path}>
-            <Image src={cover} alt=""/>
-            {emoji}
-    </CategoryOption>
-)
+export const Category = ({
+  cover = DEFAULT_IMAGE,
+  path = "#",
+  emoji = "?",
+}) => (
+  <CategoryOption to={path}>
+    <Image src={cover} alt="" />
+    {emoji}
+  </CategoryOption>
+);
