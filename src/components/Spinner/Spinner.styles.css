@@ -3,7 +3,7 @@
     position: relative;
     width: 80px;
     height: 80px;
-    margin: 0 calc(50% - 40px);
+    margin: calc(50vh - 40px) calc(50% - 40px);
   }
   .lds-ring div {
     box-sizing: border-box;

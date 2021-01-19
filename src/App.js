@@ -7,8 +7,6 @@ import { Context } from './Context'
 
 //Pages
 import { Detail } from './pages/Detail'
-import { User } from './pages/User'
-import { NotRegisteredUser } from './pages/NotRegisteredUser'
 import { NotFound } from './pages/NotFound'
 
 import { ScrollToTop } from './components/ScrollToTop/ScrollToTop.component'
@@ -19,6 +17,8 @@ import { Spinner } from './components/Spinner/Spinner.component'
 // lazy loading
 const Favs = React.lazy(() => import('./pages/Favs'))
 const Home = React.lazy(() => import('./pages/Home'))
+const User = React.lazy(() => import('./pages/User'))
+const NotRegisteredUser = React.lazy(() => import('./pages/NotRegisteredUser'))
 
 export const App = () => {
 
