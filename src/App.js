@@ -33,7 +33,7 @@ export const App = () => {
   }
 
   return (
-    <Suspense fallback={<Spinner style={{marginTop:"45%"}}/>} >
+    <Suspense fallback={<Spinner />} >
       <GlobalStyles/>
       <div style={logoWrapper}>
         <Logo/>

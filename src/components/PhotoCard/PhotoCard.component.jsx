@@ -15,7 +15,7 @@ export const PhotoCard = ({ id, liked, likes = 0, src = DEFAULT_IMAGE }) => {
   const { isAuth } = useContext(Context);
   const [show, element] = useNearScreen();
   const [showMessage, setShowMessage] = useState(false);
-
+  
   return (
     <Article ref={element}>
       {show && (

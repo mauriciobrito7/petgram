@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { useInputValue } from '../../hooks/useInputValue.hook'
 import { Form, Input, Title, Error } from './UserForm.styles'
 import { SubmitButton } from '../SubmitButton/SubmitButton.componet'
 
-export const UserForm = ({ onSubmit, title, error, disabled }) => {
+export const UserForm = ({ onSubmit, title, error = null, disabled }) => {
 
   const email = useInputValue('')
   const password = useInputValue('')
+  const [errorMsg, setErrorMsg] = useState(error)
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    onSubmit({ 
-      email: email.value, 
-      password: password.value
-    })
+
+    if(email.value.length !== 0 && password.value.length) {
+      onSubmit({ 
+        email: email.value, 
+        password: password.value
+      })
+    }else{
+      setErrorMsg('Complete the form')
+    }
   }
 
   return  (
@@ -27,7 +33,9 @@ export const UserForm = ({ onSubmit, title, error, disabled }) => {
       <SubmitButton disabled={disabled}>{title}</SubmitButton>
     </Form>
 
-    {error && <Error>{error}</Error>}
+    {errorMsg &&
+      <Error>{errorMsg}</Error>
+    }
   </>
   )
 }
