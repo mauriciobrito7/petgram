@@ -13,6 +13,7 @@ export const ContainerMessage = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
+  z-index: 1000;
   left: calc(50% - 25%);
   bottom: calc(50px + 1em);
   ${fadeIn({ time: "0.3s" })}

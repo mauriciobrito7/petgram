@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { ContainerMessage } from "./FloatMessage.styles";
 
-export const FloatMessage = ({ children, type, time }) => {
+export const FloatMessage = ({ children, type, time = 2000 }) => {
   const message = children;
   const [show, setShow] = useState(true);
 
