@@ -43,12 +43,10 @@ export const Title = styled.h1`
   }
 `;
 
-export const Grid = styled.div`
-  padding-top: 32px;
-`;
 export const Image = styled.img`
   object-fit: cover;
   height: 100%;
   width: 100%;
   position: absolute;
+  left: 0;
 `;
