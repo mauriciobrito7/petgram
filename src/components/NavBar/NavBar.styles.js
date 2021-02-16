@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { fadeIn } from "../../styles/animation";
 import { colors } from "../../styles/theme";
 
 export const Nav = styled.nav`
