@@ -3,7 +3,7 @@ import { Category } from "../Category/Category.component";
 import { List, Item, Nav } from "./ListOfCategories.styles";
 import { useCategoriesData } from "../../hooks/useCategoriesData.hook";
 import { ShadowSpinner } from "../ShadowSpinner/ShadowSpinner.component";
-import { useLocation } from  "react-router-dom"
+import { useLocation } from "react-router-dom";
 
 const ListOfCategoriesComponent = () => {
   const [categories, loading] = useCategoriesData();
@@ -20,13 +20,13 @@ const ListOfCategoriesComponent = () => {
 
     return () => {
       document.removeEventListener("scroll", eventScrollId);
-      return () => ac.abort();
+      ac.abort();
     };
   }, [showFixed]);
 
   const renderList = (fixed) => (
     <Nav>
-      <List fixed={fixed} >
+      <List fixed={fixed}>
         {loading ? (
           <ShadowSpinner
             shape={"circle"}
@@ -36,8 +36,15 @@ const ListOfCategoriesComponent = () => {
           />
         ) : (
           categories.map((category) => (
-            <Item key={category.id} activeItem={location.pathname.includes('pet')}>
-              <Category {...category} location={location} path={`/pet/${category.id}`} />
+            <Item
+              key={category.id}
+              activeItem={location.pathname.includes("pet")}
+            >
+              <Category
+                {...category}
+                location={location}
+                path={`/pet/${category.id}`}
+              />
             </Item>
           ))
         )}
