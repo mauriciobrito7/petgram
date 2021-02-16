@@ -1,15 +1,17 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import { colors } from "../../styles/theme";
 
 export const Button = styled.button`
-  background: #8d00ff;
-  border-radius:3px;
-  color: #fff;
+  background: ${colors.primary};
+  border-radius: 4px;
+  color: ${colors.white};
   height: 32px;
   display: block;
   width: 100%;
   text-align: center;
   cursor: pointer;
+  position: relative;
   &[disabled] {
-    opacity: .3
+    opacity: 0.3;
   }
-`
+`;

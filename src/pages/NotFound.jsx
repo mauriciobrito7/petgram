@@ -1,30 +1,32 @@
-import React from 'react'
-import  styled  from 'styled-components'
-import { Link } from 'react-router-dom'
-import NoFoundLogo from '../svg/error-404.svg'
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import NotFoundIcon from "../components/Icons/NotFoundIcon";
+import { colors } from "../styles/theme";
+import { Layout } from "../components/Layout/Layout.component";
 
 const ContainerNotFound = styled.div`
-  height:calc(100vh - 100px);
-  width:100%;
-  display:flex;
-  flex-wrap:wrap;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-`
+  height: calc(100vh - 100px);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
 const Title = styled.h1`
   width: 100%;
   font-size: 18px;
   font-weight: normal;
-  color: #888;
+  color: ${colors.lightGray};
   @media (min-width: 720px) {
     font-size: 32px;
   }
-`
+`;
 
 const LinkHome = styled(Link)`
-  color:#212121;
+  color: ${colors.lightGray};
   font-weight: bold;
   font-size: 18px;
   width: 100%;
@@ -32,18 +34,14 @@ const LinkHome = styled(Link)`
   @media (min-width: 720px) {
     font-size: 32px;
   }
-`
-
-const NotFoundImg = styled.img`
-  width:200px;
-  height:200px;
-  
-`
+`;
 
 export const NotFound = () => (
   <ContainerNotFound>
-    <NotFoundImg src={NoFoundLogo}/>
-    <Title>Error 404 - Page not found</Title>
-    <LinkHome to='/'>Go home</LinkHome>
+    <Layout>
+      <NotFoundIcon width={"100%"} />
+      <Title>Error 404 - Page not found</Title>
+      <LinkHome to="/">Go home</LinkHome>
+    </Layout>
   </ContainerNotFound>
-)
+);
