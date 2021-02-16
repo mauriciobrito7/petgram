@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../Context";
 import { UserForm } from "../components/UserForm/UserForm.component";
 import { RegisterMutation } from "../container/RegisterMutation";
 import { LoginMutation } from "../container/LoginMutation";
 import { Layout } from "../components/Layout/Layout.component";
+import { FloatMessage } from "../components/FloatMessage/FloatMessage.component";
 
 const NotRegisteredUser = () => {
   const { activateAuth } = useContext(Context);
+  const [showMessage, setShowMessage] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   return (
     <Layout title="Login">
       <RegisterMutation>
@@ -14,20 +17,29 @@ const NotRegisteredUser = () => {
           const onSubmit = ({ email, password }) => {
             const input = { email, password };
             const variables = { input };
-            register({ variables }).then(({ data }) => {
-              const { signup } = data;
-              activateAuth(signup);
-            });
+            register({ variables })
+              .then(({ data }) => {
+                const { signup } = data;
+                activateAuth(signup);
+              })
+              .catch(() => {
+                setShowMessage(true);
+                setErrorMsg("email have already used or invalid password");
+              });
           };
-          const errorMsg = error && "the user have already exist";
 
           return (
-            <UserForm
-              disabled={loading}
-              error={errorMsg}
-              onSubmit={onSubmit}
-              title="Registrarse"
-            />
+            <>
+              <UserForm
+                disabled={loading}
+                error={errorMsg}
+                onSubmit={onSubmit}
+                title="Registrarse"
+              />
+              {showMessage && (
+                <FloatMessage type="alert">{errorMsg}</FloatMessage>
+              )}
+            </>
           );
         }}
       </RegisterMutation>
@@ -37,20 +49,28 @@ const NotRegisteredUser = () => {
           const onSubmit = ({ email, password }) => {
             const input = { email, password };
             const variables = { input };
-            login({ variables }).then(({ data }) => {
-              const { login } = data;
-              activateAuth(login);
-            });
+            login({ variables })
+              .then(({ data }) => {
+                const { login } = data;
+                activateAuth(login);
+              })
+              .catch(() => {
+                setShowMessage(true);
+                setErrorMsg("email doesn't exist or invalid password");
+              });
           };
-          const errorMsg =
-            error && "the password is wrong or the user does not exist";
           return (
-            <UserForm
-              disabled={loading}
-              error={errorMsg}
-              onSubmit={onSubmit}
-              title="Iniciar sesion"
-            />
+            <>
+              <UserForm
+                disabled={loading}
+                error={errorMsg}
+                onSubmit={onSubmit}
+                title="Iniciar sesion"
+              />
+              {showMessage && (
+                <FloatMessage type="alert">{errorMsg}</FloatMessage>
+              )}
+            </>
           );
         }}
       </LoginMutation>
