@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import EmptyIcon from "../Icons/EmptyIcon";
 
 export const ListOfFavs = ({ favs = [] }) => {
-  console.log(favs);
   return (
     <div style={{ textAlign: "center" }}>
       {favs.length !== 0 ? (
