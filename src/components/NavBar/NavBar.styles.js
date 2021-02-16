@@ -40,14 +40,5 @@ export const NavItem = styled(NavLink)`
     svg {
       fill: ${colors.primary};
     }
-
-    &:after {
-      ${fadeIn({ time: "0.5s" })}
-      content: '-';
-      position: absolute;
-      bottom: 0;
-      font-size: 34px;
-      line-height: 20px;
-    }
   }
 `;
