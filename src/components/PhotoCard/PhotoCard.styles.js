@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { fadeIn } from "../../styles/animation";
 import { Link } from "react-router-dom";
+import { colors } from "../../styles/theme";
 
 export const Article = styled.article`
+  background-color: ${colors.darkGray};
   min-height: 200px;
+  border-radius: 0.5em;
+  padding: 0.5em 0 0.5em 0;
+  margin-bottom: 1em;
 `;
 
 export const ImgWrapper = styled(Link)`
@@ -13,22 +18,16 @@ export const ImgWrapper = styled(Link)`
   overflow: hidden;
   padding: 56.25% 0 0 0;
   position: relative;
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
-  @media (min-width: 720px) {
-    width: 80%;
-  }
 `;
 export const Info = styled.div`
-  width: 90%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: left;
-  margin-bottom: 1.5em;
-  @media (min-width: 720px) {
-    width: 80%;
-  }
+  color: ${colors.white};
 `;
 
 export const Img = styled.img`
