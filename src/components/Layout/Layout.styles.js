@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Fragment = styled.div`
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 `;
 export const Div = styled.div`
   padding: 16px;
+  padding-bottom: 0px;
 `;
 export const Title = styled.h1`
   font-size: 24px;
