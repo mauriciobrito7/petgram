@@ -3,16 +3,19 @@ import styled from 'styled-components'
 export const Container = styled.div`
     width:100%;
     display:inline-flex;
+    overflow:hidden;
     &.column {
         flex-wrap:wrap;
         justify-content:center;
+    overflow:hidden;
+
         div {
             margin-bottom: 1em;
         }
     }
     &.row {
         display: -webkit-inline-box; 
-        overflow:scroll;
+        overflow:hidden;
         div {
             margin-right: 1em;
             width:100%;
