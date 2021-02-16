@@ -9,7 +9,7 @@ export const Nav = styled.nav`
   justify-content: space-around;
   background: ${colors.darkGray};
   border-radius: 1.5em 1.5em 0 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   bottom: -4px;
   height: 50px;
   margin: 0 auto;
@@ -29,8 +29,17 @@ export const NavItem = styled(NavLink)`
   justify-content: center;
   text-decoration: none;
   width: 100%;
+  transition: color 0.3s ease-in-out;
+  svg {
+    width: 28px;
+    transition: fill 0.3s ease-in-out;
+    fill: ${colors.lightGray};
+  }
   &[aria-current] {
     color: ${colors.primary};
+    svg {
+      fill: ${colors.primary};
+    }
 
     &:after {
       ${fadeIn({ time: "0.5s" })}

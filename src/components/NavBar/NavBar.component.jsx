@@ -1,22 +1,26 @@
-import React from 'react'
-import { Nav, NavItem } from './NavBar.styles'
-import { MdHome, MdFavoriteBorder, MdPersonOutline } from 'react-icons/md'
+import React from "react";
+import { Nav, NavItem } from "./NavBar.styles";
+import { MdHome, MdFavoriteBorder, MdPersonOutline } from "react-icons/md";
+import UserIcon from "../Icons/UserIcon";
+import HomeIcon from "../Icons/HomeIcon";
+import FavIcon from "../Icons/FavIcon";
 
-const SIZE = '32px';
+const SIZE = "32px";
 
 export const NavBar = () => {
-
-  return <Nav>
-      <NavItem exact to='/'>
-        <MdHome size={SIZE}/>
+  return (
+    <Nav>
+      <NavItem exact to="/">
+        <HomeIcon />
       </NavItem>
 
-      <NavItem exact to='/favs'>
-        <MdFavoriteBorder size={SIZE}/>
+      <NavItem exact to="/favs">
+        <FavIcon />
       </NavItem>
 
-      <NavItem exact to='/user'>
-        <MdPersonOutline size={SIZE}/> 
+      <NavItem exact to="/user">
+        <UserIcon size={SIZE} />
       </NavItem>
-  </Nav>
-}
+    </Nav>
+  );
+};
