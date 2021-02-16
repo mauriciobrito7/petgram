@@ -1,8 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import {colors} from "../../styles/theme"
 
 export const Svg = styled.svg`
-  width:220px;
-  margin-left: -10px !important;
-  margin-top:-30px !important;
-  margin-bottom: -40px !important;
-`
+  width: 100%;
+  filter: drop-shadow(0 0 0.10rem ${colors.lightGray});
+`;
