@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
 import styled from "styled-components";
+import { colors } from "../../styles/theme"
 
 const BackIcon = styled(IoMdArrowBack)`
   font-size: "32px";
-  color: "#212121";
 `;
 
 const LinkBack = styled(Link)`
@@ -26,7 +26,7 @@ export const GoBack = () => {
         history.goBack();
       }}
     >
-      <BackIcon size={SIZE} color={"#212121"} />
+      <BackIcon size={SIZE} color={colors.lightGray} />
     </LinkBack>
   );
 };
