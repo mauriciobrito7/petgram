@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { colors } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
     html {
@@ -12,16 +13,16 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        background: #fefefe;
+        background: ${colors.black};
+        color: ${colors.lightGray};
         height: 100vh;
         margin: 0 auto;
         max-width: 500px;
         overscroll-behavior: none; 
-        
     }
 
     #root {
-        box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
         overflow-x: hidden;
         min-height: 99vh;
         padding-bottom: 10px;
