@@ -1,6 +1,5 @@
 import React from "react";
 import { Nav, NavItem } from "./NavBar.styles";
-import { MdHome, MdFavoriteBorder, MdPersonOutline } from "react-icons/md";
 import UserIcon from "../Icons/UserIcon";
 import HomeIcon from "../Icons/HomeIcon";
 import FavIcon from "../Icons/FavIcon";
