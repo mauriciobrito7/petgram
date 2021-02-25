@@ -41,4 +41,18 @@ export const GlobalStyles = createGlobalStyle`
     input {
         box-sizing: border-box
     }
+
+    ::-webkit-scrollbar-track {
+        background: ${colors.darkGray};
+    }
+
+    ::-webkit-scrollbar {
+        height: 16px;
+        background-color: ${colors.black};
+    }
+
+    ::-webkit-scrollbar-thumb {
+        height: 8px;
+        background-color: ${colors.lightGray};
+    }
 `;
