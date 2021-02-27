@@ -4,8 +4,6 @@ import { colors } from "../../styles/theme";
 
 export const Nav = styled.nav`
   width: 100%;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   margin-bottom: 1em;
 `;
 
@@ -14,6 +12,10 @@ export const List = styled.ul`
   overflow: scroll;
   overflow-y: hidden;
   padding: 1em;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
   //when fixed = true
   ${(props) =>
     props.fixed &&
@@ -34,16 +36,24 @@ export const List = styled.ul`
         ${fadeIn({ time: "0.3s" })}
       }
     `}
-    
 `;
 
 export const Item = styled.li`
-  width:80px;
+  width: 80px;
   transition: all 0.2s ease;
-  ${props => props.activeItem === true && css`
+  ${(props) =>
+    props.activeItem === true &&
+    css`
       {
         &{
           margin-right:12px;
         }
+      ${(props) =>
+        props.loading &&
+        css`
+          & {
+            background: crimson;
+          }
+        `}
     `}
 `;
